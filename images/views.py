@@ -8,7 +8,7 @@ def index(request):
 
 def gallery(request):
     gallery = Gallery.objects.all()
-    return render(request,'all-photos/gallery1.html',{'gallery':gallery})
+    return render(request,'all-photos/gallery.html',{'gallery':gallery})
 
 def location(request):
    
@@ -21,7 +21,7 @@ def location(request):
     kericho_images = Gallery.objects.filter(location=kericho)
     nairobi_images = Gallery.objects.filter(location=nairobi)
     
-    return render(request, 'all-photos/location1.html', {"karatina": karatina_images,"kericho":kericho_images, "nairobi":nairobi_images})
+    return render(request, 'all-photos/location.html', {"karatina": karatina_images,"kericho":kericho_images, "nairobi":nairobi_images})
 
 def category(request):
     nature=Category.objects.get(pk=1)
@@ -33,7 +33,7 @@ def category(request):
     technology = Gallery.objects.filter(category=technology)
     love = Gallery.objects.filter(category=love)
     
-    return render(request,'all-photos/category1.html', {"technology": technology,"nature": nature, "love": love})
+    return render(request,'all-photos/category.html', {"technology": technology,"nature": nature, "love": love})
 
 def search_results(request):
     if 'image' in request.GET and request.GET['image']:
@@ -43,7 +43,7 @@ def search_results(request):
         return render(request,'search.html',{"message":message,"images":searched_images})
     else:
         message = "You have not searched any images"
-        return render(request,'search1.html',{"message":message})
+        return render(request,'search.html',{"message":message})
 
 
 
