@@ -51,7 +51,7 @@ python3.8 manage.py migrate
 ```bash
 python3.8 manage.py runserver
 ```
-Open [localhost:5000](http://127.0.0.1:8000)
+Open [localhost:8000](http://127.0.0.1:8000)
 ## Testing the Application
 `python3.8 manager.py tests`
 ## Built With
