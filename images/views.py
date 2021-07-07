@@ -24,9 +24,9 @@ def location(request):
     return render(request, 'all-photos/location.html', {"karatina": karatina_images,"kericho":kericho_images, "nairobi":nairobi_images})
 
 def category(request):
-    nature=Category.objects.get(pk=1)
+    technology=Category.objects.get(pk=1)
     love=Category.objects.get(pk=2)
-    technology = Category.objects.get(pk=3)
+    nature = Category.objects.get(pk=3)
     
 
     nature= Gallery.objects.filter(category=nature)
