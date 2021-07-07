@@ -1,10 +1,12 @@
 from django.db import models
+import cloudinary
+from cloudinary.models import CloudinaryField 
 
 class Gallery(models.Model):
     id=models.IntegerField( primary_key=True)
     title = models.CharField(max_length=55)
     description = models.TextField(max_length=100)
-    image = models.ImageField(upload_to= 'gallery/')
+    image = CloudinaryField('image') 
     pub_date = models.DateTimeField(auto_now_add=True)
     category =  models.ForeignKey('Category',on_delete=models.CASCADE)
     location =  models.ForeignKey('Location',on_delete=models.CASCADE)
