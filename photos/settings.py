@@ -1,6 +1,6 @@
 import os
 from pathlib import Path
-
+import cloudinary
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -124,4 +124,8 @@ STATIC_URL = '/static/'
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
-
+cloudinary.config( 
+cloud_name = "deewwutzw", 
+api_key = "412374378869692", 
+api_secret = 'azBC6f5BPkMJRRDqU7RzTlcAFF0' 
+) 
