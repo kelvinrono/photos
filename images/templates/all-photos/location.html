@@ -129,7 +129,64 @@
         </div>
     </div>
 
-    
+
+    <h2>Kericho Images:</h2>
+    <div class="row">
+        <div class="col-md-">
+            
+            {% for image in kericho %}
+
+            
+            <div class="col-md-3" data-toggle="modal" data-target="#{{image.id}}">
+                <div class="card card2">
+                    <img src="{{image.image.url}}" alt="{{image.name}}" class="card-img img-top" height="200px" width="100%">
+                    <p class="card card-body">author: {{image.title}}</p>
+                    <p class="card card-footer">posted: {{image.pub_date}}</p>
+                </div>
+        
+            </div>
+
+
+            <div class="modal fade " id="{{image.id}}" tabindex="-1" role="dialog"
+                aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered modal-md" role="document">
+                    <div class="modal-content modalcard">
+                        <div class="modal-header">
+                            <h5 style="color:blue"class="modal-title" id="imageheader">{{image.name}}</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body card3">
+                            <img src="{{image.image.url}}" alt="{{image.name}}" class="img-fluid" height="100%" width="100%">
+                            <p style="color:blue" class="text-left">{{image.description}}</p>
+                            <p style="color:maroon" style="color:blue" class="image-location">Location : {{image.location}}</p>
+                            <p style="color:maroon" class="image-location">Category : {{image.category}}</p>
+                            <p style="color:maroon"  class="image-location">Date on : {{ image.date }}</p>
+                        </div>
+                        <div class="modal-footer">
+
+                            <input style="color:blue;"class="form-control input-lg" type="text"  value="{{image.image.url}}" id="{{image.id}}.url">
+                            
+                            <button type="button" class="btn btn-info btn-sm" onclick="myFunction( '{{image.id}}.url')">copy 
+                            </button> 
+                            <button type="button" class="btn btn-info btn-sm" data-dismiss="modal">close
+                            </button>
+                
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            {% empty %}
+            <div class="row">
+                <h2 class="text-center" style="color: red;">There are no image items</h2>
+            </div>
+            {% endfor %}
+
+        </div>
+    </div>
 
 
 </div>
