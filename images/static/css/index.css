@@ -1,0 +1,37 @@
+.wrapper{
+    background-color: aqua;
+    background-color: #D2D4D3;
+    height: 70vh;
+    width:100vw;
+}
+
+
+
+.desc{
+    text-align: center;
+    font-size:2rem
+
+}
+.left{
+    height:20vh;
+    width:30vw;
+    background-color:#393b3a
+}
+.view-gallery{
+   display:flex;
+   justify-content:center;
+   align-items: center; 
+}
+
+footer{
+    display:flex;
+    justify-content:space-evenly;
+    position: absolute;
+    align-items:center;
+    bottom: 0px;
+    height:10vh;
+    background-color:#1a1b1a;
+    color:white;
+    font-size:1.6rem;
+    width:100vw;
+}
